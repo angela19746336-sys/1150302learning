@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AESTHETIC MASTERS FORUM | 報名表單</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Inter:wght@300;400;600&family=Noto+Serif+TC:wght@700;900&family=Noto+Sans+TC:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --oatmeal: #F2EFE9;
+            --ink: #1A1A1A;
+            --hairline: rgba(26, 26, 26, 0.2);
+        }
+
+        body {
+            background-color: var(--oatmeal);
+            color: var(--ink);
+            font-family: 'Inter', 'Noto Sans TC', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .serif-huge {
+            font-family: 'Playfair Display', 'Noto Serif TC', serif;
+            line-height: 0.85;
+            letter-spacing: -0.02em;
+        }
+
+        .sans-small {
+            font-size: 0.65rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        .hairline-border {
+            border-color: var(--hairline);
+        }
+
+        /* 表單元素美化 */
+        input, select, textarea {
+            background: transparent !important;
+            border: none !important;
+            border-bottom: 1px solid var(--hairline) !important;
+            border-radius: 0 !important;
+            padding: 0.75rem 0 !important;
+            transition: all 0.4s ease;
+            width: 100%;
+            font-size: 1.1rem;
+        }
+
+        input:focus {
+            outline: none !important;
+            border-bottom: 1px solid var(--ink) !important;
+        }
+
+        label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.5rem;
+            display: block;
+            color: rgba(26, 26, 26, 0.6);
+        }
+
+        .btn-submit {
+            background-color: var(--ink);
+            color: var(--oatmeal);
+            padding: 1.5rem 3rem;
+            transition: all 0.3s ease;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 1.25rem;
+        }
+
+        .btn-submit:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .btn-submit:not(:disabled):hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+
+        .issue-no {
+            position: fixed;
+            left: 2rem;
+            top: 50%;
+            transform: rotate(-90deg) translateX(-50%);
+            transform-origin: left top;
+        }
+
+        @media (max-width: 768px) {
+            .serif-huge { font-size: 4rem; }
+            .issue-no { display: none; }
+        }
+    </style>
+</head>
+<body class="p-6 md:p-12 lg:p-20">
+
+    <div class="issue-no sans-small hidden md:block">
+        Volume 01 / Issue 2024 — Aesthetic Philosophy
+    </div>
+
+    <header class="max-w-7xl mx-auto mb-20 relative">
+        <div class="flex flex-col md:flex-row justify-between items-end border-b hairline-border pb-8">
+            <div class="w-full md:w-2/3">
+                <p class="sans-small mb-4 text-gray-500">The Annual Gathering of Visual Thinkers</p>
+                <h1 class="serif-huge text-7xl md:text-9xl mb-6">
+                    Aesthetic<br>
+                    <span class="italic font-light">Masters</span> Forum
+                </h1>
+            </div>
+            <div class="w-full md:w-1/3 text-right">
+                <p class="text-sm font-light leading-relaxed">
+                    探索設計的邊界，重新定義當代美學的新基準。<br>
+                    2024 年 12 月 15 日 / 台北藝術中心
+                </p>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+            <div class="lg:col-span-4 border-r hairline-border pr-12 hidden lg:block">
+                <div class="sticky top-12">
+                    <h2 class="serif-huge text-5xl mb-8">Registry</h2>
+                    <p class="sans-small mb-12">Section 01 / Personal Information</p>
+                    <div class="space-y-6 text-sm italic opacity-70">
+                        <p>「美並非存在於物體之中，而是存在於物體與物體產生的陰影疊加之中。」</p>
+                        <p>— 谷崎潤一郎</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lg:col-span-8">
+                <form id="registrationForm" class="space-y-16">
+                    <section class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10">
+                        <div class="md:col-span-2 border-b hairline-border pb-2">
+                            <span class="sans-small">Step 01. Identity</span>
+                        </div>
+                        
+                        <div>
+                            <label for="name">Full Name / 姓名</label>
+                            <input type="text" id="name" name="name" placeholder="請輸入您的真實姓名" required>
+                        </div>
+
+                        <div>
+                            <label for="email">Electronic Mail / 電子郵件</label>
+                            <input type="email" id="email" name="email" placeholder="example@studio.com" required>
+                        </div>
+
+                        <div>
+                            <label for="phone">Contact Number / 聯絡電話</label>
+                            <input type="tel" id="phone" name="phone" placeholder="0900-000-000" required>
+                        </div>
+
+                        <div>
+                            <label for="occupation">Vocation / 職業領域</label>
+                            <select id="occupation" name="occupation" required>
+                                <option value="" disabled selected>選擇您的專業領域</option>
+                                <option value="設計師">視覺設計</option>
+                                <option value="建築師">建築空間</option>
+                                <option value="藝術家">純藝術</option>
+                                <option value="媒體人">媒體傳播</option>
+                                <option value="其他">其他領域</option>
+                            </select>
+                        </div>
+                    </section>
+
+                    <section class="grid grid-cols-1 gap-y-10">
+                        <div class="border-b hairline-border pb-2">
+                            <span class="sans-small">Step 02. Preferences</span>
+                        </div>
+
+                        <div>
+                            <label>Session Selection / 欲參加場次</label>
+                            <div class="mt-4 space-y-4">
+                                <label class="flex items-center space-x-3 cursor-pointer">
+                                    <input type="checkbox" class="session-checkbox w-4 h-4 !w-auto" value="上午場">
+                                    <span class="text-lg">上午場：極簡主義的當代詮釋 (09:00 - 12:00)</span>
+                                </label>
+                                <label class="flex items-center space-x-3 cursor-pointer">
+                                    <input type="checkbox" class="session-checkbox w-4 h-4 !w-auto" value="下午場">
+                                    <span class="text-lg">下午場：數位時代的工藝精神 (14:00 - 17:00)</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="expectations">Aspiration / 您對論壇的期待 (選填)</label>
+                            <textarea id="expectations" name="expectations" rows="3" placeholder="請簡述您希望在本次論壇中獲得的啟發..."></textarea>
+                        </div>
+                    </section>
+
+                    <div class="pt-10 flex flex-col md:flex-row items-center justify-between border-t hairline-border">
+                        <p id="statusLabel" class="text-[10px] uppercase tracking-widest opacity-40 mb-6 md:mb-0 max-w-xs">
+                            Submission of this form constitutes agreement to our privacy terms and creative community guidelines.
+                        </p>
+                        <button type="submit" id="submitBtn" class="btn-submit w-full md:w-auto">
+                            Submit Registration →
+                        </button>
+                    </div>
+                </form>
+
+                <div id="successMessage" class="hidden py-20 text-center">
+                    <h3 class="serif-huge text-6xl mb-4 italic">Thank You.</h3>
+                    <p class="sans-small">您的報名資訊已成功同步至 Google 試算表。</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="max-w-7xl mx-auto mt-32 pt-8 border-t hairline-border flex flex-col md:flex-row justify-between items-start opacity-50 text-[10px] tracking-[0.2em] uppercase">
+        <div>© 2024 Aesthetic Masters Collective</div>
+        <div>Design as Philosophy / Life as Art</div>
+    </footer>
+
+    <script>
+        // 設定區：您的 Apps Script 網頁應用程式網址
+        const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbz2eEGu9AmSeK_qIgt95BIlqpEs9JXDlpKPqI2GiUKpTxFmsrKciuZ1_9Snu2htbSj6/exec';
+
+        const form = document.getElementById('registrationForm');
+        const submitBtn = document.getElementById('submitBtn');
+        const statusLabel = document.getElementById('statusLabel');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const sessions = Array.from(document.querySelectorAll('.session-checkbox:checked'))
+                                 .map(cb => cb.value)
+                                 .join(', ');
+
+            if (!sessions) {
+                alert('請至少選擇一個場次');
+                return;
+            }
+
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Processing...';
+            statusLabel.textContent = 'Connecting to data archives... Please wait.';
+
+            const formData = new FormData();
+            formData.append('name', document.getElementById('name').value);
+            formData.append('email', document.getElementById('email').value);
+            formData.append('phone', document.getElementById('phone').value);
+            formData.append('occupation', document.getElementById('occupation').value);
+            formData.append('session', sessions);
+            formData.append('expectations', document.getElementById('expectations').value);
+
+            // 使用 URLSearchParams 確保與 doPost(e) 的 e.parameter 相容
+            const queryParams = new URLSearchParams();
+            formData.forEach((value, key) => {
+                queryParams.append(key, value);
+            });
+
+            fetch(`${SCRIPT_URL}?${queryParams.toString()}`, {
+                method: 'POST'
+            })htm
+            .then(response => response.json())
+            .then(res => {
+                if (res.result === 'success') {
+                    form.classList.add('hidden');
+                    document.getElementById('successMessage').classList.remove('hidden');
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                } else {
+                    throw new Error(res.error || 'Unknown error');
+                }
+            })
+            .catch(error => {
+                console.error('Error!', error.message);
+                alert('報名失敗：' + error.message);
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Submit Registration →';
+                statusLabel.textContent = 'Connection failed. Please try again.';
+            });
+        });
+    </script>
+</body>
+</html>
